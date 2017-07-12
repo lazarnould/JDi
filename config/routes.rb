@@ -1,6 +1,38 @@
 Rails.application.routes.draw do
 
 
+  get 'tickets/new'
+
+  get 'tickets/create'
+
+  get 'tickets/edit'
+
+  get 'tickets/update'
+
+  get 'tickets/show'
+
+  get 'tickets/index'
+
+  get 'messages/new'
+
+  get 'messages/create'
+
+  get 'messages/edit'
+
+  get 'messages/update'
+
+  get 'messages/show'
+
+  get 'messages/destroy'
+
+  get 'conversations/create'
+
+  get 'conversations/show'
+
+  get 'conversations/index'
+
+  get 'conversations/destroy'
+
   get 'contacts/new'
 
   get 'contacts/create'
