@@ -7,13 +7,24 @@ class TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new(ticket_params)
-    @ticket.save
+    @ticket.user = current_user
+    if @ticket.save
+      flash[:notice] = "You're ticket has been sended, we'll come back to you shortly"
+      @conversation = Conversation.build(ticket: @ticket, section: @ticket.section)
+      redirect_to conversation_path(@conversation)
+    else
+      flash[:alert] = "An error occured, try again"
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
+    @ticket.update(ticket_params)
+    @conversation = Conversation.where(ticket_id: @ticket)
+    redirect_to conversation_path(@conversation)
   end
 
   def show
