@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
+# Basic Sectionss
+Section.create(name: 'Development' , description: 'blablabla we are awesome')
+Section.create(name: 'Design' , description: 'blablabla Audrey is gonna bring you some beauty here')
+Section.create(name: 'Community Management' , description: 'blablabla you gonna look awesome on those social medias')
+Section.create(name: 'Community Management' , description: 'blablabla bring you some traction, conversions and retention')
+
+
