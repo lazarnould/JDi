@@ -1,4 +1,6 @@
 class SectionsController < ApplicationController
+  before_action :find_section, except: :create
+
   def create
   end
 
@@ -9,5 +11,11 @@ class SectionsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def find_section
+    @section = Section.find(params[:id])
   end
 end

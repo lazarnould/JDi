@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :workers, except: [:new, :edit, :index]
 
-  resources :sections, except: [:new, :edit, :index]
+  resources :sections, except: [:create, :new, :edit, :index]
 
   resources :tickets, except: :destroy
 
