@@ -1,6 +1,4 @@
 class ConversationsController < ApplicationController
-  def create
-  end
 
   def show
     @conversation = Conversation.find(params[:id])
