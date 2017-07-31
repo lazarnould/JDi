@@ -1,2 +1,8 @@
-<h1>Contacts#new</h1>
-<p>Find me in app/views/contacts/new.html.erb</p>
+<h1>Having a question about digital conquest? Do not hesitate, we'd love to help you succeed in that universe </h1>
+
+<%= simple_form_for(@contact) do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :email %>
+  <%= f.input :object %>
+  <%= f.input :description %>
+<%end%>

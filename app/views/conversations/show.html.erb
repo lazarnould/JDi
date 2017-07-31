@@ -1,2 +1,4 @@
-<h1>Conversations#show</h1>
-<p>Find me in app/views/conversations/show.html.erb</p>
+<% @conversation.messages.each do |f|%>
+  <%= f.user.photo%>
+  <%= f.content%>
+<%end%>
