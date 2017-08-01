@@ -1,2 +1,5 @@
-<h1>Conversations#index</h1>
-<p>Find me in app/views/conversations/index.html.erb</p>
+<% @conversations.each do |f|%>
+  <%= f.user.photo%>
+  <%= f.user.email%>
+  <%= f.ticket.object%>
+<%end%>

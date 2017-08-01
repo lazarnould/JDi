@@ -1,13 +1,8 @@
 class SectionsController < ApplicationController
-  def create
-  end
-
-  def update
-  end
+  before_action :find_section, except: :create
 
   def show
+    @section = Section.find(params[:id])
   end
 
-  def destroy
-  end
 end

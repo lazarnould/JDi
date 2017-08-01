@@ -4,15 +4,17 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :workers, except: [:new, :edit, :index]
+  resources :workers, only:  [:edit, :update, :show]
 
-  resources :sections, except: [:new, :edit, :index]
+  resources :sections, only: [:show]
 
   resources :tickets, except: :destroy
 
   resources :contacts, only: [:new, :create, :destroy]
 
-  resources :conversations, except: [:new, :edit, :update] do
+  resources :conversations, only: [:index, :destroy]
+
+  resources :conversations, only: [:show] do
     resources :messages, except: :index
   end
 
