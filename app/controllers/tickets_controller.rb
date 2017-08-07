@@ -10,8 +10,9 @@ class TicketsController < ApplicationController
     @ticket.user = current_user
     if @ticket.save
       flash[:notice] = "You're ticket has been sended, we'll come back to you shortly"
-      @conversation = Conversation.create(ticket: @ticket, section: @ticket.section)
-      redirect_to conversation_path(@conversation)
+      redirect_to ticket_path(@ticket)
+      # @conversation = Conversation.create(ticket: @ticket, section: @ticket.section)
+      # redirect_to conversation_path(@conversation)
     else
       flash[:alert] = "An error occured, try again"
       render :new
