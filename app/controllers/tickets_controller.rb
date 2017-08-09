@@ -8,11 +8,11 @@ class TicketsController < ApplicationController
   def create
     @ticket = Ticket.new(ticket_params)
     @ticket.user = current_user
+    @ticket.section = Section.find(1)
     if @ticket.save
       flash[:notice] = "You're ticket has been sended, we'll come back to you shortly"
-      redirect_to ticket_path(@ticket)
-      # @conversation = Conversation.create(ticket: @ticket, section: @ticket.section)
-      # redirect_to conversation_path(@conversation)
+      @conversation = Conversation.create(ticket: @ticket, section: @ticket.section)
+      redirect_to conversation_path(@conversation)
     else
       flash[:alert] = "An error occured, try again"
       render :new
@@ -42,7 +42,7 @@ class TicketsController < ApplicationController
   end
 
   def find_ticket
-    Ticket.find(params[:id])
+    @ticket = Ticket.find(params[:id])
   end
 
 end
